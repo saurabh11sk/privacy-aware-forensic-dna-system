@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16
+    container_name: dna_pg
+    environment:
+      POSTGRES_DB: dna_forensics
+      POSTGRES_USER: dna_admin
+      POSTGRES_PASSWORD: dna_admin
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: dna_api
+    depends_on:
+      - db
+    environment:
+      DNA_DB_URI: postgresql://dna_admin:dna_admin@db:5432/dna_forensics
+      JWT_SECRET: dev-secret-key
+
+    # 🔥 THIS IS THE FIX
+    volumes:
+      - ../data:/app/data
+      - ../scripts:/app/scripts
+
+    ports:
+      - "8000:8000"
