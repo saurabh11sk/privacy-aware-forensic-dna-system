@@ -22,7 +22,7 @@ services:
       DNA_DB_URI: postgresql://dna_admin:dna_admin@db:5432/dna_forensics
       JWT_SECRET: dev-secret-key
 
-    # 🔥 THIS IS THE FIX
+    
     volumes:
       - ../data:/app/data
       - ../scripts:/app/scripts
