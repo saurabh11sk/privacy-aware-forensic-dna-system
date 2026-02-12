@@ -1,48 +1,67 @@
-# 🧬 Forensic DNA Analysis – FastAPI + DevOps Project
+# 🧬 Privacy-Aware Forensic DNA Evidence Matching System
 
-This is a Dockerized FastAPI backend for a Privacy-Aware Forensic DNA Analysis System using PostgreSQL.  
-The project demonstrates backend development with DevOps practices like Docker, docker-compose, environment variables, and data ingestion pipelines.
+A full-stack forensic DNA analysis platform built using FastAPI, React (Vite), PostgreSQL, and Docker.
+
+This system enables secure DNA evidence ingestion, STR profile matching, and privacy-aware forensic analysis with role-based authentication.
 
 ---
 
 ## 🚀 Tech Stack
 
+Backend:
 - FastAPI (Python)
 - PostgreSQL
 - JWT Authentication (RBAC)
-- Docker & Docker Compose
+- SQL Initialization Scripts
+
+Frontend:
+- React (Vite)
+- Axios
+- Protected Routes
+
+DevOps:
+- Docker
+- Docker Compose
+- Environment Variables
+- Data Ingestion Pipelines
 
 ---
 
 ## 📁 Project Structure
 
-```text
-forensic_dna_backend/
-├── api/            # FastAPI application
-├── infra/          # Docker & infrastructure (Dockerfile, docker-compose, SQL init)
-├── scripts/        # Data ingestion scripts
-├── data/           # CSV / Excel datasets
+privacy-aware-forensic-dna-system/
+├── api/                     # FastAPI backend
+├── forensic-dna-frontend/   # React frontend
+├── infra/                   # Docker & infrastructure
+├── scripts/                 # Data ingestion scripts
+├── data/                    # Dataset files
 └── README.md
-```
 
 ---
 
 ## ⚙️ How to Run
 
-```bash
-git clone https://github.com/sangam1814/forensic-dna-fastapi-devops.git
-cd forensic-dna-fastapi-devops
+Clone the repository:
+
+git clone https://github.com/saurabh11sk/privacy-aware-forensic-dna-system.git
+cd privacy-aware-forensic-dna-system
+
+Start with Docker:
+
 docker-compose up --build
 
-	•	API: http://localhost:8000
-	•	Docs: http://localhost:8000/docs
+Services:
+- Backend API → http://localhost:8000
+- Swagger Docs → http://localhost:8000/docs
+- Frontend → http://localhost:5173
 
-⸻
+---
 
-🔐 Authentication
+## 🔐 Authentication
 
 POST /auth/login
 
+Example:
 {
   "email": "admin",
   "password": "admin"
@@ -50,36 +69,42 @@ POST /auth/login
 
 Returns JWT token for authorized access.
 
-⸻
+---
 
-📊 Data Ingestion
+## 🧪 Core Features
 
-Run inside Docker:
+- Evidence submission
+- STR profile ingestion
+- DNA match comparison
+- Exportable match reports
+- Role-based access control
+- Feedback module
+- Secure API endpoints
 
-docker-compose run api python /app/scripts/ingest_profiles.py
+---
 
-Loads populations, loci, profiles, and genotypes into the database.
+## 🛠 DevOps Highlights
 
-⸻
+- Fully Dockerized backend & database
+- PostgreSQL containerized setup
+- SQL initialization scripts
+- Environment-based configuration
+- One-command startup
+- Clean monorepo architecture
 
-🧪 Example APIs
-	•	GET /populations
-	•	GET /loci
-	•	GET /profiles/{sample_id}
+---
 
-⸻
+## 📌 Future Improvements
 
-🛠 DevOps Highlights
-	•	Dockerized FastAPI service
-	•	PostgreSQL container
-	•	DB initialization using SQL scripts
-	•	Environment variables for configuration
-	•	One-command startup
+- Advanced statistical match probability
+- Case management dashboard
+- Audit logs
+- Cloud deployment (AWS / Azure)
+- CI/CD integration
 
-⸻
+---
 
-👤 Author
+## 👤 Author
 
-Sangam Raj
-GitHub: https://github.com/sangam1814
-
+Saurabh Gupta  
+GitHub: https://github.com/saurabh11sk
