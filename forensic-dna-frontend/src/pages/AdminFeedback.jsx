@@ -48,9 +48,19 @@ function AdminFeedback() {
 
             {fb.file_path && (
               <p>
-                <a href={`http://localhost:8000${fb.file_path}`} target="_blank" rel="noreferrer">
+                {/* <a href={`http://localhost:8000${fb.file_path}`} target="_blank" rel="noreferrer">
                   View Attachment
-                </a>
+                </a> */}
+
+                {/* <a
+                    // href={`http://localhost:8000${fb.file_path}`}
+                    href={fb.file_path}
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    > */}
+                    <a href={fb.file_path} target="_blank" rel="noopener noreferrer">
+                    View Attachment
+                    </a>
               </p>
             )}
 

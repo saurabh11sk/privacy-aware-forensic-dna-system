@@ -45,11 +45,12 @@
 # def root():
 #     return {"ok": True, "service": "dna-api"}
 
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-
-
+from pathlib import Path
+import os
 
 from .routers import (
     auth,
@@ -66,7 +67,22 @@ app = FastAPI(
     version="1.0.0",
 )
 
-app.mount("/uploads", StaticFiles(directory="data/uploads"), name="uploads")
+# ✅ DETERMINE UPLOAD DIRECTORY (Docker or Local)
+def get_uploads_directory():
+    """Get the uploads directory path based on environment."""
+    docker_path = Path("/app/data/uploads")
+    if docker_path.exists() or os.environ.get("DOCKER_ENV"):
+        return "/app/data/uploads"
+    
+    # Local development path
+    local_path = Path(__file__).parent.parent / "data" / "uploads"
+    local_path.mkdir(parents=True, exist_ok=True)
+    return str(local_path)
+
+uploads_dir = get_uploads_directory()
+print("UPLOAD DIRECTORY BEING USED:", uploads_dir)
+
+app.mount("/uploads", StaticFiles(directory=uploads_dir), name="uploads")
 
 
 # =========================

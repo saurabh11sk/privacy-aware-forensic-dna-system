@@ -11,6 +11,9 @@ function DNADetails() {
     const [feedbackMessage, setFeedbackMessage] = useState("");
     const [feedbackFile, setFeedbackFile] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+    const [file, setFile] = useState(null);
+
 
     const [displayPatents, setDisplayPatents] = useState([
                 {
@@ -108,34 +111,34 @@ function DNADetails() {
                     ]);
 
                     const handleFeedbackSubmit = async (e) => {
-  e.preventDefault();
+                        e.preventDefault();
 
-  if (!feedbackMessage.trim()) {
-    alert("Message is required");
-    return;
-  }
+                        if (!feedbackMessage.trim()) {
+                            alert("Message is required");
+                            return;
+                        }
 
-  const formData = new FormData();
-  formData.append("module", "dna");   // 🔥 important
-  formData.append("message", feedbackMessage);
+                        const formData = new FormData();
+                        formData.append("module", "dna");   // 🔥 important
+                        formData.append("message", feedbackMessage);
 
-  if (feedbackFile) {
-    formData.append("file", feedbackFile);
-  }
+                        if (feedbackFile) {
+                            formData.append("file", feedbackFile);
+                        }
 
-  try {
-    setLoading(true);
-    await submitFeedback(formData);
-    alert("Feedback submitted successfully!");
-    setFeedbackMessage("");
-    setFeedbackFile(null);
-  } catch (error) {
-    console.error(error);
-    alert("Submission failed");
-  } finally {
-    setLoading(false);
-  }
-};
+                        try {
+                            setLoading(true);
+                            await submitFeedback(formData);
+                            alert("Feedback submitted successfully!");
+                            setFeedbackMessage("");
+                            setFeedbackFile(null);
+                        } catch (error) {
+                            console.error(error);
+                            alert("Submission failed");
+                        } finally {
+                            setLoading(false);
+                        }
+                        };
 
 
 
