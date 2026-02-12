@@ -5,7 +5,7 @@ import datetime
 import os
 from ..db import get_conn
 
-router = APIRouter(prefix="/auth", tags=["auth"])
+router = APIRouter(prefix="/auth", tags=["auth0sization"])
 
 SECRET = os.getenv("JWT_SECRET", "dev-secret-key")
 ALGO = "HS256"

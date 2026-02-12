@@ -3,3 +3,4 @@ uvicorn
 psycopg[binary]
 python-jose
 passlib[bcrypt]
+python-multipart

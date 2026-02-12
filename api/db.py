@@ -4,6 +4,8 @@ import psycopg
 DNA_DB_URI = os.getenv(
     "DNA_DB_URI",
     "postgresql://dna_admin:dna_admin@db:5432/dna_forensics"
+    # "postgresql://dna_admin:dna_admin@localhost:5432/dna_forensics"
+
 )
 
 def get_conn():

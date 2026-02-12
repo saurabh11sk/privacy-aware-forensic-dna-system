@@ -1,16 +1,56 @@
+# # Python
+# __pycache__/
+# *.pyc
+# .venv/
+
+# # OS
+# .DS_Store
+
+# # Secrets
+# .env
+
+# # Backups
+# *.bak
+
+# # Docker
+# *.log
+
+# =========================
 # Python
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 .venv/
-
-# OS
-.DS_Store
-
-# Secrets
+venv/
 .env
 
-# Backups
+# =========================
+# React / Vite
+# =========================
+node_modules/
+dist/
+build/
+.vite/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Backup Files
+# =========================
 *.bak
 
+# =========================
 # Docker
-*.log
+# =========================
+docker-compose.override.yml

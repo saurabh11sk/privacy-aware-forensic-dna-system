@@ -1,0 +1,258 @@
+
+/* RESET BODY DEFAULTS */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= PAGE ================= */
+/* .admin-page {
+  min-height: 100vh;
+  background: #1f1f1f;
+  color: #e5e7eb;
+} */
+ .admin-page {
+  min-height: 100vh;
+  width: 100vw;
+  background: #1f1f1f;
+  color: #e5e7eb;
+}
+
+
+/* ================= TOP HEADER ================= */
+.admin-header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-header {
+  height: 64px;
+  padding: 0 24px;
+  background: #111827;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #374151;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.system-name {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ================= MAIN CONTENT ================= */
+/* .admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+} */
+ .admin-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 48px 24px;
+  box-sizing: border-box;
+}
+
+
+/* ================= WELCOME ================= */
+.dashboard-welcome {
+  padding: 32px 24px 16px 24px;
+}
+
+.dashboard-welcome h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 12px;
+}
+
+.dashboard-welcome p {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  max-width: 850px;
+}
+
+/* ================= SUMMARY CARDS ================= */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 24px;
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, #111827, #020617);
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.dashboard-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.card-value {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.status-ok {
+  color: #22c55e;
+}
+
+/* ================= PRIMARY ACTIONS ================= */
+.dashboard-actions {
+  padding: 32px 24px 0 24px;
+}
+
+.actions-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 20px;
+}
+
+/* ACTION CARDS */
+.action-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.action-card {
+  background: linear-gradient(135deg, #111827, #020617);
+  border: 1px solid #374151;
+  border-radius: 14px;
+  padding: 32px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.action-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #f9fafb;
+}
+
+.action-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.action-card:hover {
+  transform: translateY(-6px);
+  border-color: #3b82f6;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .dashboard-welcome,
+  .dashboard-cards,
+  .dashboard-actions {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+/* ================= KNOWLEDGE SECTION ================= */
+.dashboard-knowledge {
+  margin-top: 48px;
+  padding: 0 24px 48px 24px;
+}
+
+.knowledge-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 24px;
+}
+
+/* GRID */
+.knowledge-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.knowledge-card {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.knowledge-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f9fafb;
+}
+
+.knowledge-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.knowledge-btn {
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.knowledge-btn:hover {
+  background: #1d4ed8;
+}
+
